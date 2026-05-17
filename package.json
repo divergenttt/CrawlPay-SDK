@@ -1,0 +1,29 @@
+{
+  "name": "@crawlpay/sdk",
+  "version": "1.0.0",
+  "description": "Monetize your site for AI crawlers via x402 payments on Arc Testnet",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "crawlpay",
+    "x402",
+    "ai-bots",
+    "monetization",
+    "arc",
+    "nanopayments"
+  ],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^25.8.0",
+    "typescript": "^6.0.3"
+  }
+}
