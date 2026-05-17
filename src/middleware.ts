@@ -7,7 +7,7 @@ export interface CrawlPayConfig {
 }
 
 const DEFAULT_PRICE = "0.001";
-const DEFAULT_NETWORK = "arc-testnet";
+const DEFAULT_NETWORK = "arcTestnet";
 
 export function crawlpay(config: CrawlPayConfig) {
   const price = config.price ?? DEFAULT_PRICE;
