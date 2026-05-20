@@ -21,8 +21,10 @@ export function isAIBot(userAgent: string): boolean {
 export function getBotName(userAgent: string): AIBotName | null {
   if (!userAgent) return null;
 
+  const lowerUA = userAgent.toLowerCase();
+
   for (const bot of AI_BOTS) {
-    if (userAgent.includes(bot)) {
+    if (lowerUA.includes(bot.toLowerCase())) {
       return bot;
     }
   }
