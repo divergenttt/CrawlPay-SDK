@@ -9,6 +9,11 @@ export interface CrawlPayConfig {
 const DEFAULT_PRICE = "0.001";
 const DEFAULT_NETWORK = "arcTestnet";
 
+function hasPaymentSignature(request: Request): boolean {
+  // Headers.get() matches names case-insensitively (payment-signature / PAYMENT-SIGNATURE)
+  return request.headers.get("payment-signature") !== null;
+}
+
 export function crawlpay(config: CrawlPayConfig) {
   const price = config.price ?? DEFAULT_PRICE;
   const network = config.network ?? DEFAULT_NETWORK;
@@ -20,7 +25,11 @@ export function crawlpay(config: CrawlPayConfig) {
       return null;
     }
 
-    const bot = getBotName(userAgent)!;
+    if (hasPaymentSignature(request)) {
+      return null;
+    }
+
+    const bot = getBotName(userAgent) ?? "Unknown Bot";
 
     const body = {
       error: "payment_required",
