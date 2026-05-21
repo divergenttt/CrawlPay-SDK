@@ -5,7 +5,7 @@ Monetize your website for AI crawlers via **x402** payments on **Arc Testnet**. 
 ## Install
 
 ```bash
-npm install github:divergenttt/CrawlPay-sdk
+npm install github:divergenttt/CrawlPay-SDK
 ```
 
 ## Quick start (Next.js)
